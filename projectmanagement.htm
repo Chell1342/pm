@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0032)http://beian.gov.cn/portal/index -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>节能低碳项目管理数据平台</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<link rel="shortcut icon" href="http://beian.gov.cn/img/ico.ico" type="image/x-icon">
+	<link href="./img/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="./img/bootstrap-responsive.css" rel="stylesheet" media="screen">
+	<link href="./img/css.css" rel="stylesheet" media="screen">
+	<link href="./img/css2.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="./img/milk.css"> 
+	<!-- 表单验证 -->
+	<script src="./img/jquery.js"></script><script src="./img/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var taken_for_user = '93fec914-d7e5-4f8c-a56a-4700075ea857';
+	</script>
+	<script type="text/javascript" src="./img/defaultToken.js"></script>
+	<script src="./img/bootstrap.min.js"></script>
+	<script src="./img/jquery.mockjax.js"></script>
+	<script src="./img/jquery.validate.js"></script>
+	<script type="text/javascript" src="./img/login.js"></script> 
+	<script type="text/javascript" src="./img/recordquery.js"></script>
+	<script type="text/javascript" src="./img/md5.min.js"></script>
+	<style>
+		.error{
+		position:absolute;
+		top:5px;
+		left:278px;
+		width:300px;
+		}
+		.error2{
+		position:absolute;
+		top:103px;
+		left:278px;
+		width:300px;
+		}
+		.error3{
+		position:absolute;
+		top:140px;
+		left:278px;
+		width:300px;
+		}
+		.errors{
+		position:absolute;
+		top:65px;
+		left:278px;
+		width:300px;
+		}
+		a:hover {text-decoration:none;}
+		h5{
+				color:#666666 !important;
+			}
+  	</style>
+</head>
+<body>
+<div class="wrapper" style="position:relative;">
+	<!-- 页面头 -->
+	
+	<!-- start:头部 -->
+      <div class="container container1">
+        <div class="navbar-header page-scroll">
+          <a class="logo">
+            <img src="./img/logo.png" width="247">
+          </a>
+          <div class="logo-right index-top">
+            <div class="input-append pull-right">
+              <input class="span2" type="text" style="border-right:0px;" placeholder="项目进度查询">
+              <span class="add-on" onclick="window.location.href=&#39;/portal/recordQuery?token=93fec914-d7e5-4f8c-a56a-4700075ea857&#39;"><i class="icon-search"></i></span>
+            </div>
+            <ul class="nav nav-pills z-index">
+              <li class="active"><a href="http://beian.gov.cn/portal/index?token=93fec914-d7e5-4f8c-a56a-4700075ea857">首页</a></li>
+              <li><a href="http://beian.gov.cn/portal/recordQuery?token=93fec914-d7e5-4f8c-a56a-4700075ea857">政策法规</a></li>
+              <li><a href="http://beian.gov.cn/portal/recordInform?token=93fec914-d7e5-4f8c-a56a-4700075ea857"></a></li>
+              <li><a href="http://beian.gov.cn/portal/recordIssue?token=93fec914-d7e5-4f8c-a56a-4700075ea857">通知公告</a></li>
+              <li><a href="http://beian.gov.cn/portal/recordNotice?token=93fec914-d7e5-4f8c-a56a-4700075ea857">项目查询</a></li>
+              <li><a href="http://beian.gov.cn/portal/recordPolicies?token=93fec914-d7e5-4f8c-a56a-4700075ea857">数据分析</a></li>
+							<li><a href="http://beian.gov.cn/portal/recordShow?token=93fec914-d7e5-4f8c-a56a-4700075ea857" onclick="loading()">研究报告</a></li>
+							<li><a href="http://beian.gov.cn/portal/recordShow?token=93fec914-d7e5-4f8c-a56a-4700075ea857" onclick="loading()">模板下载</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>    
+      <div class="heng"></div>
+    <!-- end:头部 -->
+     <div id="over" class="over"></div>
+    <div id="layout" class="layout"><img src="./img/loading2.gif"></div>
+   <script type="text/javascript">
+	   function loading(){
+		   document.getElementById("over").style.display = "block";
+		   document.getElementById("layout").style.display = "block";
+	   }
+	</script>
+	<!-- start:登录 -->
+	<div class="z_indexk">
+    <div class="z_adbg" id="cbg"> 
+      <div class="container container1" style="position:relative;">
+        <div class="z_adleft">
+          <div class="xuanch"><img src="./img/xcy.png"></div>
+          <div class="liucheng"><img id="imgliucheng" src="./img/liucheng.png"></div>
+        </div>
+        <!-- start:登录框 -->
+        <div class="loginbg" style="position:relative;width:330px;" id="dlk">
+          <!-- start:tab页 -->
+          <ul class="nav nav-tabs login_tab" id="myTab" style="margin-top:-16px;font-size: 14px;"> 
+            <li id="dl1" class="active">
+            	<a href="http://beian.gov.cn/portal/index#ptyh" data-toggle="tab" id="PTUSER">项目单位</a>
+           	</li>
+           	<li id="dl2">
+           		<a href="http://beian.gov.cn/portal/index#jrs" data-toggle="tab" id="qyLoginA">管理员</a>
+       		</li>
+       	
+           <!-- 	<li id="dl4">
+           		<a href="#cdn" data-toggle="tab" id="CDN">CDN用户</a>
+       		</li> -->
+          </ul>
+          <!-- start:tab页 -->
+          <!-- start:tab页内容 -->
+          <div id="myTabContent" class="">
+          	<!-- 普通用户 -->
+          	<div class="tab-pane  active in" id="ptyh">
+          	<form id="loginform" autocomplete="off" action="http://beian.gov.cn/user/login" method="post">
+          	<input type="hidden" name="token" value="93fec914-d7e5-4f8c-a56a-4700075ea857">
+               <ul class="unstyled controls logink">
+                <li class="row-fluid" style="position:relative;">
+                  <label id="laccount" for="account" class=" text-right z_color">用户名</label>&nbsp;
+                  <input class="z_input" type="text" name="account" id="account" maxlength="30" onkeyup="accountCheck()">
+                  <input type="hidden" id="accountFlag"> 
+                  <span id="accountRequired" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入账号</font></span>
+	              <span id="accountNum" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号最少六位</font></span>
+				  <span id="accountRule" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号为字母、数字、下划线</font></span>
+                  <span id="accountR" class="error" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lpwd" for="pwd" class="text-right z_color">密码</label>&nbsp;
+                  <input class="z_input" type="password" onpaste="return false" name="pwd" id="pwd" maxlength="20" onkeyup="pwdCheck()">
+                  <input type="hidden" id="pwdFlag">
+                  <span id="pwdRequired" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入密码</font></span>
+		          <span id="pwdNum" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">密码最少六位</font></span>
+                  <span id="pwdR" class="error2" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error2"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lvalidCode" class=" text-right z_color">验证码</label>&nbsp;
+                  <input class="z_input" type="text" name="validCode" maxlength="4" id="validCode" style="width:70px;" onkeyup="validCodeCheck()">
+                  <span><img alt="点击刷新" id="imgs" src="./img/image.jsp" style="cursor: pointer;" onclick="this.src=&#39;/common/image.jsp?t=4&amp;tim=&#39;+new Date().getTime()"></span>
+                  <input type="hidden" id="validCodeFlag">
+		          <span id="validCodeRequired" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入验证码</font></span>
+				  <span id="validCodeE" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">验证码错误</font></span>
+                  <span id="validCodeR" class="error3" style="display:none;"><img src="./img/checked.gif"></span>
+               	  <span class="status error3"></span>
+                </li>
+                <li class="row-fluid" style="margin-top:10px; height:20px;">
+                	<label class="" style="line-height:20px; margin-left:30px;width:90px;">
+	                </label>
+                    <label class="text-right" style="margin-left:80px;"><a href="http://beian.gov.cn/portal/findpwd?token=93fec914-d7e5-4f8c-a56a-4700075ea857">忘记密码？</a></label>
+                </li>
+                <li class="row-fluid" style="margin-top:5px;">
+                	<input type="hidden" value="" name="zz" id="zz">
+                  <a href="javascript:void(0)" class="btn btn-danger btn-large" style="width:230px; margin-left:35px;" id="btn" onclick="logging()">登录</a>
+                </li>
+                <li class="row-fluid" style="">
+                  <label class="text-left z_color " style="width:140px;margin-left:40px;">没有账号？<a href="http://beian.gov.cn/user/registerurl?userType=ptyh&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">注册</a></label>
+                </li>
+              </ul>
+              </form>
+            </div>
+            <!-- 普通用户 -->
+            <!-- IDC用户 -->
+            <div class="tab-pane " id="jrs" style="display: none;">
+              <form id="loginformIDC" autocomplete="off" action="http://beian.gov.cn/user/loginIdc" method="post">
+              <input type="hidden" name="token" value="93fec914-d7e5-4f8c-a56a-4700075ea857">
+               <ul class="unstyled controls logink">
+                <li class="row-fluid">
+                  <label id="laccount" for="account" class=" text-right z_color">用户名</label>&nbsp;
+                  <input class="z_input" type="text" name="accountIDC" id="accountIDC" maxlength="30" onkeyup="accountCheckIDC()">
+                  <input type="hidden" id="accountFlagIDC"> 
+                  <span id="accountRequiredIDC" class=" errors" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入账号</font></span>
+	              <span id="accountNumIDC" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号最少六位</font></span>
+				  <span id="accountRuleIDC" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号为字母、数字、下划线</font></span>
+                  <span id="accountRIDC" class="error" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lpwd" for="pwd" class="text-right z_color">密码</label>&nbsp;
+                  <input class="z_input" type="password" onpaste="return false" name="pwdIDC" id="pwdIDC" maxlength="20" onkeyup="pwdCheckIDC()">
+                  <input type="hidden" id="pwdFlagIDC">
+                  <span id="pwdRequiredIDC" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入密码</font></span>
+		          <span id="pwdNumIDC" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">密码最少六位</font></span>
+                  <span id="pwdRIDC" class="error2" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error2"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lvalidCode" class=" text-right z_color">验证码</label>&nbsp;
+                  <input class="z_input" type="text" name="validCodeIDC" maxlength="4" id="validCodeIDC" style="width:70px;" onkeyup="validCodeCheckIDC()">
+                  <span><img alt="点击刷新" id="imgs" src="./img/image(1).jsp" style="cursor: pointer;" onclick="this.src=&#39;/common/image.jsp?t=7&amp;tim=&#39;+new Date().getTime()"></span>
+                  <input type="hidden" id="validCodeFlagIDC">
+		          <span id="validCodeRequiredIDC" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入验证码</font></span>
+				  <span id="validCodeEIDC" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">验证码错误</font></span>
+                  <span id="validCodeRIDC" class="error3" style="display:none;"><img src="./img/checked.gif"></span>
+               	  <span class="status error3"></span>
+                </li>
+                <li class="row-fluid" style="margin-top:10px; height:20px;">
+                	<label class="" style="line-height:20px; margin-left:30px;width:90px;">
+	                </label>
+                    <label class="text-right" style="margin-left:80px;"><a href="http://beian.gov.cn/portal/idcfindpwd?token=93fec914-d7e5-4f8c-a56a-4700075ea857">忘记密码？</a></label>
+                </li>
+                <li class="row-fluid" style="margin-top:5px;">
+                	<input type="hidden" value="" name="zz" id="zz">
+                  <a href="javascript:void(0)" class="btn btn-danger btn-large" style="width:230px;margin-left:35px;" id="btn" onclick="loggingIDC()">登录</a>
+                </li>
+                <li class="row-fluid" style="">
+                  <label class="text-left z_color " style="width:260px;margin-left:40px;">
+                 	 <a onclick="idcEwm()">显示二维码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  	没有账号？<a href="http://beian.gov.cn/user/registerurl?userType=idc&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">注册</a>
+                  </label>
+                </li>
+              </ul>
+              </form>
+            </div>
+            <!-- IDC用户 -->
+            <!-- app市场 -->
+			<div class="tab-pane " id="appMarket" style="display: none;">
+          	<form id="loginformApp" autocomplete="off" action="http://beian.gov.cn/user/loginAPP" method="post">
+          	<input type="hidden" name="token" value="93fec914-d7e5-4f8c-a56a-4700075ea857">
+               <ul class="unstyled controls logink">
+                <li class="row-fluid" style="position:relative;">
+                  <label id="laccount" for="account" class=" text-right z_color">用户名</label>&nbsp;
+                  <input class="z_input" type="text" name="accountApp" id="accountApp" maxlength="30" onkeyup="accountCheckApp()">
+                  <input type="hidden" id="accountFlagApp"> 
+                  <span id="accountRequiredApp" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入账号</font></span>
+	              <span id="accountNumApp" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号最少六位</font></span>
+				  <span id="accountRuleApp" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号为字母、数字、下划线</font></span>
+                  <span id="accountRApp" class="error" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lpwd" for="pwd" class="text-right z_color">密码</label>&nbsp;
+                  <input class="z_input" type="password" onpaste="return false" name="pwdApp" id="pwdApp" maxlength="20" onkeyup="pwdCheckApp()">
+                  <input type="hidden" id="pwdFlagApp">
+                  <span id="pwdRequiredApp" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入密码</font></span>
+		          <span id="pwdNumApp" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">密码最少六位</font></span>
+                  <span id="pwdRApp" class="error2" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error2"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lvalidCode" class=" text-right z_color">验证码</label>&nbsp;
+                  <input class="z_input" type="text" name="validCodeApp" maxlength="4" id="validCodeApp" style="width:70px;" onkeyup="validCodeCheckApp()">
+                  <span><img alt="点击刷新" id="imgs" src="./img/image(2).jsp" style="cursor: pointer;" onclick="this.src=&#39;/common/image.jsp?t=100&amp;tim=&#39;+new Date().getTime()"></span>
+                  <input type="hidden" id="validCodeFlagApp">
+		          <span id="validCodeRequiredApp" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入验证码</font></span>
+				  <span id="validCodeEApp" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">验证码错误</font></span>
+                  <span id="validCodeRApp" class="error3" style="display:none;"><img src="./img/checked.gif"></span>
+               	  <span class="status error3"></span>
+                </li>
+                <li class="row-fluid" style="margin-top:10px; height:20px;">
+                	<label class="" style="line-height:20px; margin-left:30px;width:90px;">
+	                </label>
+                    <label class="text-right" style="margin-left:80px;"><a href="http://beian.gov.cn/portal/appfindpwd?token=93fec914-d7e5-4f8c-a56a-4700075ea857">忘记密码？</a></label>
+                </li>
+                <li class="row-fluid" style="margin-top:5px;">
+                	<input type="hidden" value="" name="zz" id="zz">
+                  <a href="javascript:void(0)" class="btn btn-danger btn-large" style="width:230px; margin-left:35px;" id="btn" onclick="loggingApp()">登录</a>
+                </li>
+                <li class="row-fluid" style="">
+                  <label class="text-left z_color " style="width:140px;margin-left:40px;">没有账号？<a href="http://beian.gov.cn/user/registerurl?userType=app&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">注册</a></label>
+                </li>
+              </ul>
+              </form>
+            </div>            
+            <!-- app市场 -->
+            <!-- CDN用户-->
+			<div class="tab-pane " id="CDNPanel" style="display: none;">
+          	<form id="loginformCDN" autocomplete="off" action="http://beian.gov.cn/user/loginCDN" method="post">
+          	<input type="hidden" name="token" value="93fec914-d7e5-4f8c-a56a-4700075ea857">
+               <ul class="unstyled controls logink">
+                <li class="row-fluid" style="position:relative;">
+                  <label id="laccount" for="account" class=" text-right z_color">用户名</label>&nbsp;
+                  <input class="z_input" type="text" name="accountCDN" id="accountCDN" maxlength="30" onkeyup="accountCheckCDN()">
+                  <input type="hidden" id="accountFlagCDN"> 
+                  <span id="accountRequiredCDN" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入账号</font></span>
+	              <span id="accountNumCDN" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号最少六位</font></span>
+				  <span id="accountRuleCDN" class="error" style="display:none;"><img src="./img/unchecked.gif"><font color="red">账号为字母、数字、下划线</font></span>
+                  <span id="accountRCDN" class="error" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lpwd" for="pwd" class="text-right z_color">密码</label>&nbsp;
+                  <input class="z_input" type="password" onpaste="return false" name="pwdCDN" id="pwdCDN" maxlength="20" onkeyup="pwdCheckCDN()">
+                  <input type="hidden" id="pwdFlagCDN">
+                  <span id="pwdRequiredCDN" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入密码</font></span>
+		          <span id="pwdNumCDN" class="error2" style="display:none;"><img src="./img/unchecked.gif"><font color="red">密码最少六位</font></span>
+                  <span id="pwdRCDN" class="error2" style="display:none;"><img src="./img/checked.gif"></span>
+                  <span class="status error2"></span>
+                </li>
+                <li class="row-fluid">
+                  <label id="lvalidCode" class=" text-right z_color">验证码</label>&nbsp;
+                  <input class="z_input" type="text" name="validCodeCDN" maxlength="4" id="validCodeCDN" style="width:70px;" onkeyup="validCodeCheckCDN()">
+                  <span><img alt="点击刷新" id="imgs" src="./img/image(2).jsp" style="cursor: pointer;" onclick="this.src=&#39;/common/image.jsp?t=100&amp;tim=&#39;+new Date().getTime()"></span>
+                  <input type="hidden" id="validCodeFlagCDN">
+		          <span id="validCodeRequiredCDN" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">请输入验证码</font></span>
+				  <span id="validCodeECDN" class="error3" style="display:none;"><img src="./img/unchecked.gif"><font color="red">验证码错误</font></span>
+                  <span id="validCodeRCDN" class="error3" style="display:none;"><img src="./img/checked.gif"></span>
+               	  <span class="status error3"></span>
+                </li>
+                <li class="row-fluid" style="margin-top:10px; height:20px;">
+                	<label class="" style="line-height:20px; margin-left:30px;width:90px;">
+	                </label>
+                    <label class="text-right" style="margin-left:80px;"><a href="http://beian.gov.cn/portal/forgetPwd?token=93fec914-d7e5-4f8c-a56a-4700075ea857">忘记密码？</a></label>
+                </li>
+                <li class="row-fluid" style="margin-top:5px;">
+                	<input type="hidden" value="" name="zz" id="zz">
+                  <a href="javascript:void(0)" class="btn btn-danger btn-large" style="width:230px; margin-left:35px;" id="btn" onclick="loggingCDN()">登录</a>
+                </li>
+                <li class="row-fluid" style="">
+                  <label class="text-left z_color " style="width:140px;margin-left:40px;">没有账号？<a href="http://beian.gov.cn/user/registerurl?userType=cdn&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">注册</a></label>
+                </li>
+              </ul>
+              </form>
+            </div>  
+            <!-- CDN用户-->
+          </div>
+          <div id="huangYing" class="loginbg_xia" style="position: absolute; right: 0px; bottom: -32px; width: 330px; display: none;">
+	       		欢迎IDC用户下载<a onclick="djxs();"><span style="color: #FFCC00;">智慧IDC</span></a>移动应用软件
+	      </div>
+          <!-- end:tab页内容 -->
+        </div>
+        <!-- end:登录框 -->
+        <!-- start:二维码 -->
+        <div id="ewm" style="display: none;">
+         	 <div><img id="u1_img" src="./img/ewm1.jpg"><img id="u2_img" src="./img/ewm2.jpg"></div>
+        	 <div class="sao_sao">使用手机扫一扫对应版本的二维码<br><br>
+        	 	下载<span style="color: #FFCC00;">智慧IDC</span>移动应用软件
+        	 	<br><br><a onclick="djfh();"><span style="color:#ffffff;margin-left:194px;cursor: pointer;">点击返回登录页面<span></span></span></a>
+        	 </div>
+        </div>
+        <!-- end:二维码 -->
+      </div>
+    </div>
+     <!-- end:登录 -->
+    <div id="over" class="over"></div>
+    <div id="layout" class="layout"><img src="./img/loading2.gif"></div>
+    
+    <div class="container container1 index_content">
+      <div class="index_left">
+        <div class="tongzhi" style="overflow:hidden;">
+          <p class="z_p"> 
+            <span class="tit">项目进度</span>
+          </p>
+          <marquee behavior="scroll" direction="down" loop="-1" scrollamount="2" onmouseout="this.start()" onmouseover="this.stop()" vspace="10" height="300">
+          <ul class="tz_list">
+          
+         	 
+         		<li>
+					 <span class="tz_tit">中国石油化工股份有限公司北京燕山分公司</span> 
+	             	 <span class="tz_tit_url">已通过基期审核</span>
+             	</li>
+			 
+         		<li>
+					 <span class="tz_tit">首钢总公司</span> 
+	             	 <span class="tz_tit_url"> 已通过基期审核</span>
+             	</li>
+			 
+         		<li>
+					 <span class="tz_tit">北京铁路局</span> 
+	             	 <span class="tz_tit_url">已通过节能量审核</span>
+             	</li>
+			 
+         		<li>
+					 <span class="tz_tit">华能北京热电股份有限公司</span> 
+	             	 <span class="tz_tit_url"> 已通过节能量审核</span>
+             	</li>
+			 
+         		<li>
+					 <span class="tz_tit">北京新北水水泥有限责任公司</span> 
+	             	 <span class="tz_tit_url"> 已通过节能量审核</span>
+             	</li>
+			 
+         		<li>
+					 <span class="tz_tit">北京首都航空有限公司</span> 
+	             	 <span class="tz_tit_url"> 已通过节能量审核</span>
+             	</li>
+			 
+         		<li>
+					 <span class="tz_tit">北京八方达客运有限责任公司</span> 
+	             	 <span class="tz_tit_url"> 已通过基期审核</span>
+             	</li>
+			
+          </ul>
+         </marquee>
+        </div>
+				<div class="wbj">
+        	<a href="http://www.bjpc.gov.cn/"><img alt="" src="./img/fgw.png"></a>
+				</div>
+				<div class="wbj">
+        	<a href="http://www.bjepb.gov.cn//"><img alt="" src="./img/hbj.png"></a>
+				</div>	
+				<div class="wbj">
+        	<a href="http://www.bjeit.gov.cn//"><img alt="" src="./img/jxw.png"></a>
+				</div>
+
+      </div>
+      <div class="index_right">
+        <div class="content">
+          <h5>政策法规<span><a href="http://beian.gov.cn/portal/recordNotice?token=93fec914-d7e5-4f8c-a56a-4700075ea857"><img src="./img/more.gif"></a></span></h5>
+          <ul class="tz_list listr">
+          	
+          		
+           		<li>
+           			<a title="中华人民共和国网络安全法" href="http://beian.gov.cn/portal/topicDetail?id=54&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">中华人民共和国网络安全法</a>
+	            </li>
+	            
+           
+          		
+           		<li>
+           			<a title="中华人民共和国刑法修正案（九 ）" href="http://beian.gov.cn/portal/topicDetail?id=42&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">中华人民共和国刑法修正案（九 ）</a>
+	            </li>
+	            
+           
+          		
+           		<li>
+           			<a title="最高人民法院关于适用《中华人民共和国行政诉讼法》若干问题的解释 " href="http://beian.gov.cn/portal/topicDetail?id=40&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">最高人民法院关于适用《中华人民共和国行政诉讼法》若干问题的解释 </a>
+	            </li>
+	            
+           
+          		
+           		<li>
+           			<a title="最高人民法院关于适用《中华人民共和国民事诉讼法》的解释" href="http://beian.gov.cn/portal/topicDetail?id=39&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">最高人民法院关于适用《中华人民共和国民事诉讼法》的解释</a>
+	            </li>
+	            
+           
+          		
+           		<li>
+           			<a title="关于印发《互联网危险物品信息发布管理规定》的通知" href="http://beian.gov.cn/portal/topicDetail?id=37&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">关于印发《互联网危险物品信息发布管理规定》的通知</a>
+	            </li>
+	            
+           
+          		
+           
+          		
+           
+          		
+           
+          		
+           
+          		
+           
+          		
+           
+          </ul>
+        </div>
+        <div class="content">
+          <h5>常见问题<span><a href="http://beian.gov.cn/portal/recordIssue?token=93fec914-d7e5-4f8c-a56a-4700075ea857"><img src="./img/more.gif"></a></span></h5>
+          <ul class="tz_list listr">
+            
+            	
+           		<li>
+           			<a title="哪些属于违反九不准的有害信息" href="http://beian.gov.cn/portal/topicDetail?id=26&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">哪些属于违反九不准的有害信息</a>
+	            </li>
+	            
+           
+            	
+           		<li>
+           			<a title="不履行公安机关联网备案的法律后果" href="http://beian.gov.cn/portal/topicDetail?id=8&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">不履行公安机关联网备案的法律后果</a>
+	            </li>
+	            
+           
+            	
+           		<li>
+           			<a title="开办者常见问题FAQ" href="http://beian.gov.cn/portal/topicDetail?id=50&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">开办者常见问题FAQ</a>
+	            </li>
+	            
+           
+            	
+           		<li>
+           			<a title="如何举报和处理互联网违法和不良信息" href="http://beian.gov.cn/portal/topicDetail?id=25&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">如何举报和处理互联网违法和不良信息</a>
+	            </li>
+	            
+           
+            	
+           		<li>
+           			<a title="哪些属于网络敲诈和有偿删帖有害信息" href="http://beian.gov.cn/portal/topicDetail?id=24&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">哪些属于网络敲诈和有偿删帖有害信息</a>
+	            </li>
+	            
+           
+            	
+           
+          </ul>
+        </div>
+        <div class="content" style="margin-top:10px;">
+          <h5>下载中心<span><a href="http://beian.gov.cn/portal/downloadcenter?token=93fec914-d7e5-4f8c-a56a-4700075ea857"><img src="./img/more.gif"></a></span></h5>
+          <ul class="tz_list listr">
+          	
+          		
+          			<li>
+	          			<a href="http://beian.gov.cn/portal/downloadFile?token=93fec914-d7e5-4f8c-a56a-4700075ea857&amp;id=29&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">
+		          			<span>互联网站安全服务平台操作指南</span>
+	          			</a>
+          			</li>
+          		
+          	
+          		
+          			<li>
+	          			<a href="http://beian.gov.cn/portal/downloadFile?token=93fec914-d7e5-4f8c-a56a-4700075ea857&amp;id=20&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">
+		          			<span>全国公安互联网站安全服务平台IDC用户操作手册</span>
+	          			</a>
+          			</li>
+          		
+          	
+          		
+          			<li>
+	          			<a href="http://beian.gov.cn/portal/downloadFile?token=93fec914-d7e5-4f8c-a56a-4700075ea857&amp;id=26&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">
+		          			<span>互联网安全服务平台APP市场备案使用说明</span>
+	          			</a>
+          			</li>
+          		
+          	
+          		
+          			<li>
+	          			<a href="http://beian.gov.cn/portal/downloadFile?token=93fec914-d7e5-4f8c-a56a-4700075ea857&amp;id=22&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">
+		          			<span>应用市场接入APP模板</span>
+	          			</a>
+          			</li>
+          		
+          	
+          		
+          			<li>
+	          			<a href="http://beian.gov.cn/portal/downloadFile?token=93fec914-d7e5-4f8c-a56a-4700075ea857&amp;id=32&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">
+		          			<span>CDN_IP上报模板</span>
+	          			</a>
+          			</li>
+          		
+          	
+          		
+          	
+          </ul>
+        </div>
+        <div class="content" style="margin-top:10px;">
+          <h5>通知公告<span><a href="http://beian.gov.cn/portal/recordPolicies?token=93fec914-d7e5-4f8c-a56a-4700075ea857"><img src="./img/more.gif"></a></span></h5>
+          <ul class="tz_list listr">
+             
+             	
+           		<li>
+           			<a title="全国打击治理电信网络新型违法犯罪集中宣传月活动启动" href="http://beian.gov.cn/portal/topicDetail?id=58&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">全国打击治理电信网络新型违法犯罪集中宣传月活动启动</a>
+	            </li>
+	            
+           
+             	
+           		<li>
+           			<a title="公安机关依法查处编造传播九寨沟地震谣言信息的网民" href="http://beian.gov.cn/portal/topicDetail?id=57&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">公安机关依法查处编造传播九寨沟地震谣言信息的网民</a>
+	            </li>
+	            
+           
+             	
+           		<li>
+           			<a title="人民日报：公安改革　惠及亿万群众" href="http://beian.gov.cn/portal/topicDetail?id=56&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">人民日报：公安改革　惠及亿万群众</a>
+	            </li>
+	            
+           
+             	
+           		<li>
+           			<a title="新华社：“爱国”幌子下的圈钱骗局——起底“五行币”系列传销案" href="http://beian.gov.cn/portal/topicDetail?id=55&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">新华社：“爱国”幌子下的圈钱骗局——起底“五行币”系列传销案</a>
+	            </li>
+	            
+           
+             	
+           		<li>
+           			<a title="公安部指挥破获特大网络赌博案 " href="http://beian.gov.cn/portal/topicDetail?id=44&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857">公安部指挥破获特大网络赌博案 </a>
+	            </li>
+	            
+           
+             	
+           
+             	
+           
+             	
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+	</div>
+    <input type="hidden" id="dengLuType" value="">
+	
+
+ <div class="z_footerk">
+ 	  <p class="z_gap"></p>
+ 	  <div class="z_footer" style="padding-bottom: 15px;"> 
+ 	  	<!-- <div style="text-align: center;margin:0 auto;width: 550px;"> -->
+ 	  	<div style="text-align: center;margin:0 auto;width: 950px;height: 79px;">
+ 	  		<div style="width: 700px;height: 79px;margin:0 auto;">
+ 	  			<div style="float:left;padding-right:26px">
+				 	  	<script type="text/javascript">
+							document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/33/000/0000/60573107/CA330000000605731070007.js' type='text/javascript'%3E%3C/script%3E"));
+						</script><span id="_ideConac"><a href="http://bszs.conac.cn/sitename?method=show&amp;id=54E30386F6076541E053022819ACD2AA&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857" target="_blank"><img id="imgConac" vspace="0" hspace="0" border="0" src="./img/red.png" data-bd-imgshare-binded="1"></a></span><script src="./img/CA330000000605731070007.js" type="text/javascript"></script><span id="_ideConac"></span> 
+		 	  	</div>
+		 	  	<div style="float:left;font-size:12px;text-align:center;">
+						 <p class="text-center" style="color:#666666;">
+					        Copyright2017 公安部网络安全保卫局 All Rights Reserved<br>
+					       <a href="http://www.miitbeian.gov.cn/?token=93fec914-d7e5-4f8c-a56a-4700075ea857">京ICP备05070602号&nbsp;&nbsp;&nbsp;</a>	
+					        邮箱：<a href="mailto:support@beian.gov.cn">support@beian.gov.cn</a><br>
+					       </p><div style="width:440px;margin:0 auto; padding: 0;">
+							 	<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102002019&amp;token=93fec914-d7e5-4f8c-a56a-4700075ea857" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;width: 100%;">
+								 	<img src="./img/ghs.png" style="float:left;">
+								 	<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#666666;">
+								 	京公网安备 11010102002019号
+								 	</p>&nbsp;&nbsp;&nbsp;建议使用1024*768以上分辨率浏览
+							 	</a>
+						   </div>
+					      <p></p>
+					      <form id="recordform" action="http://beian.gov.cn/portal/registerSystemInfo" method="post"><input type="hidden" name="recordcode" value="京ICP备030173号">
+					      <input type="hidden" name="token" value="93fec914-d7e5-4f8c-a56a-4700075ea857">
+					      </form> 	  		
+		 	  	</div> 	
+		 	  	<div style="float:left;padding-right:26px;padding-top:10px;">
+				 	  	<script id="_jiucuo_" sitecode="bm09000026" src="./img/jiucuo.js"></script><span id="_span_jiucuo"><img onclick="Link(&#39;bm09000026&#39;)" style="margin:0;border:0;cursor: pointer;" src="./img/jiucuo.png"></span>
+		 	  	</div>  		
+ 	  		</div>
+ 	  	</div>
+      </div>
+   </div>
+<script type="text/javascript">
+	$("a").each(function(index,obj){  
+		if($(obj).attr("href") != undefined){
+			if(($(obj).attr("href")).indexOf('/')>=0){
+			    if($(obj).attr("href").indexOf("?")>=0){
+					 $(obj).attr("href",$(obj).attr("href")+"&token="+taken_for_user);
+		 	    }else{
+		 	    	$(obj).attr("href",$(obj).attr("href")+"?token="+taken_for_user);
+		 	    }
+			}
+		}
+	});
+	
+	$("a").on("click",function(event){
+	//	    event.preventDefault();//使a自带的方法失效，即无法调整到href中的URL(http://www.baidu.com)
+	//	    $.ajax({
+	//	           type: "POST",
+	//	           url: "url地址",
+	//	           contentType:"application/json",
+	//	           data: JSON.stringify({param1:param1,param2:param2}),//参数列表
+	//	           dataType:"json",
+	//	           success: function(result){
+	//	              //请求正确之后的操作
+	//	           },
+	//	           error: function(result){
+	//	              //请求失败之后的操作
+	//	           }
+	//	    });
+	});	
+</script>
+
+
+<script type="text/javascript">
+		window.onload = function(){//判断是否是idc登陆
+			//dl1:网站用户；dl2:IDC用户；dl3:APP商店；dl4:CDN用户
+			$("#ewm").hide();
+			$("#huangYing").hide();
+			if($("#dengLuType").val()=='idc'){
+				idcLogin();
+			}else if($("#dengLuType").val()=='app'){
+				appLogin();
+			}else if($("#dengLuType").val()=='cdn'){
+				cdnLogin();
+			}else if($("#dengLuType").val()=='ptyh'){
+				ptwzLogin();
+			}
+		}
+		//dl2:IDC用户
+		$('#qyLoginA').on('click',function(){
+			idcLogin();
+		})
+		//dl1:网站用户
+		$('#PTUSER').on('click',function(){
+			ptwzLogin();
+		});
+		//dl3:APP商店
+		$('#APPMarket').on('click',function(){
+			appLogin();
+		});
+		//dl4:cdn用户
+		$('#CDN').on('click',function(){
+			cdnLogin();
+		});
+		function idcEwm(){
+			$("#dlk").hide();
+			$("#ewm").show();
+		}
+		function djfh(){
+			$("#dlk").show();
+			$("#ewm").hide();
+		}
+		function djxs(){
+			$("#dlk").hide();
+			$("#ewm").show();
+		}
+		//idc登陆
+		function idcLogin(){
+			$('#dl1').attr("class","");
+			$('#dl2').attr("class","active");
+			$('#dl3').attr("class","");
+			$('#dl4').attr("class","");
+			$("#jrs").show();
+			$("#ptyh").hide();
+			$("#appMarket").hide();
+			$("#CDNPanel").hide();
+			$("#ewm").hide();
+			$("#huangYing").show();
+			$("#cbg").css("background-image","url(../img/adbg_idc.png)");
+			$("#imgliucheng").attr("src","/iscs/img/liuchengIdc.png");
+		}
+		//APP商店用户登陆
+		function appLogin(){
+			$('#dl1').attr("class","");
+			$('#dl2').attr("class","");
+			$('#dl3').attr("class","active");
+			$('#dl4').attr("class","");
+			$("#appMarket").show();
+			$("#ptyh").hide();
+			$("#jrs").hide();
+			$("#CDNPanel").hide();
+			$("#ewm").hide();
+			$("#huangYing").hide();
+			$("#cbg").css("background-image","url(../img/adbg.png)");
+			$("#imgliucheng").attr("src","/iscs/img/appBg.png");
+		}
+		//CDN用户登陆
+		function cdnLogin(){
+			$('#dl1').attr("class","");
+			$('#dl2').attr("class","");
+			$('#dl3').attr("class","");
+			$('#dl4').attr("class","active");
+			$("#CDNPanel").show();
+			$("#appMarket").hide();
+			$("#ptyh").hide();
+			$("#jrs").hide();
+			$("#ewm").hide();
+			$("#huangYing").hide();
+			$("#cbg").css("background-image","url(../img/adbg.png)");
+			$("#imgliucheng").attr("src","/iscs/img/appBg.png");
+		}
+		//普通网站用户登陆
+		function ptwzLogin(){
+			$('#dl1').attr("class","active");
+			$('#dl2').attr("class","");
+			$('#dl3').attr("class","");
+			$('#dl4').attr("class","");
+			$("#ptyh").show();
+			$("#jrs").hide();
+			$("#appMarket").hide();
+			$("#CDNPanel").hide();
+			$("#ewm").hide();
+			$("#huangYing").hide();
+			$("#cbg").css("background-image","url(../img/adbg.png)");
+			$("#imgliucheng").attr("src","/iscs/img/liucheng.png");
+		}
+	</script> 
+
+</body></html>
