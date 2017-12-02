@@ -473,8 +473,8 @@ src: url('../Hiragino Sans GB W3.otf')
 }
 
 .wbj{
-	width: 297px;
-	margin: 5px 0 5px 0;
+	width: 302px;
+	margin: 5px 0 5px -5px;
 	border-top: 2px solid skyblue;
 }
 
@@ -506,6 +506,7 @@ src: url('../Hiragino Sans GB W3.otf')
 .z_footer{
 	width:100%;
 	background: #efefef;
+	margin-top: 100px;
 	padding:10px 0 5px 0;
 	height:65px;
 	display: block;
@@ -783,12 +784,6 @@ src: url('../Hiragino Sans GB W3.otf')
 	margin-right:30px;
 	}
 
-.title_s{
-	width: 350px;
-	float: left;
-	margin: 100px 0 0 100px;
-}
-
 .z_adleft{
 	float: left;
 	margin:20px 0 0 15px;
@@ -850,11 +845,12 @@ src: url('../Hiragino Sans GB W3.otf')
 }
 .tz_list {
 	clear:both;
-	list-style: none;
 	margin: 10px 5px 0px 15px; 
 	height:200px;
 }
 .tz_list li{
+	list-style-type: square;
+	list-style-position: inside;
 	padding: 4px 0;
 }
 .tz_list li .tz_tit{
@@ -891,6 +887,9 @@ src: url('../Hiragino Sans GB W3.otf')
 	font-weight: 400;
 	border-top-left-radius:3px; 
 	border-top-right-radius:3px; 
+}
+.index_right .content img {
+	padding:20px 0 8px 0;
 }
 .index_right .content h5 span{
 	float: right;
