@@ -41,6 +41,8 @@ html, body {
 .container1{
 	width:951px;
 	margin:0 auto;
+	position: relative;
+	
 }
 @font-face
 {
@@ -785,11 +787,19 @@ src: url('../Hiragino Sans GB W3.otf')
 	}
 
 .z_adleft{
-	float: left;
-	margin:20px 0 0 15px;
+	font-size: 45px;
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	transform: translate(-50%, -50%);
+	color: #FFF;
 }
 .z_adleft .xuanch{
+	margin-left: 20px;
 	margin-bottom: 40px;
+	margin-top:50px;
+	font-size: 35px;
+	color: #FFF;
 }
 .z_adleft .liucheng{
 	margin-left: 60px;
